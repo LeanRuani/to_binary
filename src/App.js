@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Binary from "../src/Binary";
+import Text from "../src/Text";
 
-function App() {
+const App = () => {
+  const [text, setText] = useState("");
+  const [binary, setBinary] = useState("");
+
+  const onChangeText = (e) => {
+    const texto = e.target.value;
+    setText(texto);
+  };
+
+  const onChangeBinary = (e) => {
+    const binario = e.target.value;
+    setBinary(binario);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1> Texto a Binario</h1>
+      <div className="App">
+        <textarea className="textarea_texto" onChange={onChangeText} />
+        <Binary text={text} />
+      </div>
+
+      <h1> Binario a Texto</h1>
+      <div className="App">
+        <textarea className="textarea_binario" onChange={onChangeBinary} />
+        <Text binary={binary} />
+      </div>
+    </>
   );
-}
+};
 
 export default App;
