@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Binary from "../src/Binary";
 import Text from "../src/Text";
+import Considerations from "../src/Considerations";
 
 const App = () => {
   const [text, setText] = useState("");
@@ -28,6 +29,10 @@ const App = () => {
       <div className="App">
         <textarea className="textarea_binario" onChange={onChangeBinary} />
         <Text binary={binary} />
+      </div>
+      <div>
+        <h2>Consideraciones Generales</h2>
+        <Considerations />
       </div>
     </>
   );

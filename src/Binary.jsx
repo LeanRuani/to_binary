@@ -1,25 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Binary = ({ text }) => {
-  // const [binary, setBinary] = useState("");
+  //100000 "espacio" en binario
 
   const binario = [];
-  const texto = text.split("");
+  const texto = text.split("100000");
 
-  texto.map(function (i) {
+  texto.map((i) => {
     if (!isNaN(i)) {
       const b = Number(i).toString(2);
       binario.push(b);
     } else {
       const textoT = i.split("");
-      textoT.map(function (i) {
-        var a = i.charCodeAt(0).toString(2);
+      textoT.map((i) => {
+        const a = i.charCodeAt(0).toString(2);
         binario.push(a);
+        return true;
       });
     }
+    return true;
   });
 
-  return <textarea className="textarea_binario" value={binario.join(" ")} />;
+  return (
+    <textarea className="textarea_binario" readOnly value={binario.join(" ")} />
+  );
 };
 
 export default Binary;

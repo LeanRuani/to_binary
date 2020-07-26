@@ -1,15 +1,16 @@
 import React from "react";
 
 const Text = ({ binary }) => {
-  //binario a hexa a decimal/texto
-
+  const texto = [];
   const binario = binary.split(" ");
 
-  const texto = parseInt(binario, 2).toString(8);
+  binario.map(function (x) {
+    x = String.fromCharCode(parseInt(x, 2));
+    texto.push(x);
+    return true;
+  });
 
-  console.log(parseInt(texto, 8));
-
-  return <textarea />;
+  return <textarea readOnly value={texto.join("")} />;
 };
 
 export default Text;
