@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Binary from "../src/Binary";
 import Text from "../src/Text";
 import Considerations from "../src/Considerations";
+import Grid from "@material-ui/core/Grid";
 
 const App = () => {
   const [text, setText] = useState("");
@@ -19,19 +20,20 @@ const App = () => {
 
   return (
     <>
-      <h1> Texto a Binario</h1>
-      <div className="App">
+      <h2> Texto a Binario</h2>
+      <Grid container direction="row" justify="center" alignItems="center">
         <textarea className="textarea_texto" onChange={onChangeText} />
         <Binary text={text} />
-      </div>
+      </Grid>
 
-      <h1> Binario a Texto</h1>
-      <div className="App">
+      <h2> Binario a Texto</h2>
+      <Grid container direction="row" justify="center" alignItems="center">
         <textarea className="textarea_binario" onChange={onChangeBinary} />
         <Text binary={binary} />
-      </div>
+      </Grid>
+
       <div>
-        <h2>Consideraciones Generales</h2>
+        <h2 className="title-considerations">Consideraciones Generales</h2>
         <Considerations />
       </div>
     </>
