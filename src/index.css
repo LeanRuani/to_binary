@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #cccccc;
+  background-color: whitesmoke;
 }
 
 .app {
@@ -26,7 +26,7 @@ body {
   width: 50%;
   margin: 20px 0 -15px 10px;
   padding: 0;
-  background-color: #2f2f2f;
+  background-color: #806b90;
   color: #fff;
   border-radius: 4px;
 }
@@ -39,7 +39,7 @@ hr {
   color: #fff;
   border-radius: 4px;
   margin: 10px;
-  background-color: #2f2f2f;
+  background-color: #806b90;
 }
 
 textarea {
@@ -50,7 +50,12 @@ textarea {
   border-radius: 4px;
 }
 
+.container {
+  padding: 4px;
+}
+
 h2 {
+  color: rgb(114, 140, 195);
   text-align: center;
 }
 
